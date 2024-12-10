@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "EuclidFlex";
+    src: url("../font/EuclidFlexBold.ttf");
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("../font/Metropolis-Bold.otf");
+}
+body {
+    font-family: "Metropolis";
+}
+.carnet {
+    width: 500px;
+    height: 772px;
+    background-image: url("../../images/plantilla.png");
+    
+    margin-bottom: 10px;
+}
+.foto {
+    position: relative;
+    z-index: -1;
+    height: 548px;
+}
+.user-photo {
+    clip-path: rect(0px 538px 666px 100px);
+}
+.boton { 
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: green;
+    border-radius: 20px;
+    padding: 0px 5px;
+    margin: 15px;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.nombre {
+    color: rgb(13 54 84);
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: "EuclidFlex";
+    font-size: 26px;
+    margin-top: -18px;
+    margin-bottom: 17px;
+}
+.grado {
+    font-family: "Metropolis";
+    color:#0093d9;
+    font-size: 1.5em;
+}
+.codigo {
+    clip-path: rect(0 264px 58px 0);
+    margin-top: -20px;
+}
+a {
+    color: black;
+}
+.control {
+    background-color: midnightblue;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 0 30px 30px 30px;
+}
+.vertical-control {
+    color: whitesmoke;
+}
+.horizontal-control {
+    color: whitesmoke;
+}
+.flex-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.input-control {
+    width: 4em;
+    height: 1.5em;
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+.carnet-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
