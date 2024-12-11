@@ -24,3 +24,9 @@ function changeHorizontal(id){
     console.log('Position: '+positionHorizontal+'; photo: '+id);
     userPhoto.style.marginLeft=positionHorizontal+'px';
 }
+function changeVertical(id){
+    const positionVertical=document.getElementById('vertical-control-'+id).value;
+    const userPhoto=document.getElementById('user-photo-'+id);
+    console.log('Position: '+positionVertical+'; photo: '+id);
+    userPhoto.style.marginTop=positionVertical+'px';
+}
