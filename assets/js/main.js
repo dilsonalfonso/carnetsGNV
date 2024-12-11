@@ -1,6 +1,5 @@
 function Guardar(id) {
     var node = document.getElementById('carnet-'+id);
-    alert('carnet-'+id);
     htmlToImage.toPng(node)
     .then(function (dataUrl) {
         var link = document.createElement('a');
@@ -18,4 +17,10 @@ function GuardarTodos(){
     for (var i=0; i<carnets.length; i++) {
         carnets[i].click();
     }
+}
+function changeHorizontal(id){
+    const positionHorizontal=document.getElementById('horizontal-control-'+id).value;
+    const userPhoto=document.getElementById('user-photo-'+id);
+    console.log('Position: '+positionHorizontal+'; photo: '+id);
+    userPhoto.style.marginLeft=positionHorizontal+'px';
 }
