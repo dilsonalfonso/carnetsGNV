@@ -12,3 +12,10 @@ function Guardar(id) {
         console.error('Oops, something went wrong!', error);
     });
 }
+function GuardarTodos(){
+    const carnets=document.getElementsByClassName('carnet');
+    console.log(carnets.length);
+    for (var i=0; i<carnets.length; i++) {
+        carnets[i].click();
+    }
+}
