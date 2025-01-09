@@ -60,3 +60,18 @@ function changeSaturation(id) {
     // Cambiar la saturación de la imagen usando filter: saturate()
     userPhoto.style.filter = 'saturate(' + saturationLevel + ')';
 }
+function changeBrightness(id) {
+    const brightnessValue = document.getElementById('brightness-control-' + id).value; // Obtén el valor del control de brillo
+    const userPhoto = document.getElementById('user-photo-' + id); // Obtén la imagen
+    console.log('Brightness: ' + brightnessValue + '; photo: ' + id);
+
+    // Asegúrate de que el valor sea un número válido
+    const brightnessLevel = parseFloat(brightnessValue);
+    if (isNaN(brightnessLevel) || brightnessLevel < 0) {
+        console.error('Valor de brillo inválido');
+        return;
+    }
+
+    // Cambiar el brillo de la imagen usando filter: brightness()
+    userPhoto.style.filter = 'brightness(' + brightnessLevel + ')';
+}
