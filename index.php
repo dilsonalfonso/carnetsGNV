@@ -53,7 +53,7 @@
         <div class="carnet-group">
             <div class="carnet" id="carnet-<?php echo $cod_Foto_Estudiante;?>" onclick="Guardar(<?php echo $cod_Foto_Estudiante;?>)">
                 <div class="foto" style="background-color:cornflowerblue; margin:5px;">
-                    <img class="user-photo" id="user-photo-<?php echo $cod_Foto_Estudiante;?>" src="Fotos/IMG_<?php echo $cod_Foto_Estudiante;?>.JPG" width="650">
+                    <img class="user-photo" id="user-photo-<?php echo $cod_Foto_Estudiante;?>" src="Fotos/JPEG/IMG_<?php echo $cod_Foto_Estudiante;?>.JPG" width="650">
                 </div>
                 <h3 class="nombre uppercase"><?php echo utf8_encode($nombreMostrar[0]." ".$apellidoMostrar[0]);?></h3>
                 <h3 class="nombre grado"><?php echo $estudiante[4];?></h3>
@@ -72,6 +72,14 @@
                 <div class="vertical-control flex-control">
                     <label for="vertical-control">Alineación Vertical</label>
                     <input class="input-control" type="number" name="vertical-control" id="vertical-control-<?php echo $cod_Foto_Estudiante;?>" value="<?php echo $verticalPosition; ?>" onChange="changeVertical('<?php echo $cod_Foto_Estudiante;?>')">
+                </div>
+                <div class="zoom-control flex-control">
+                    <label for="zoom-control">Zoom</label>
+                    <input class="input-control" type="number" name="zoom-control" id="zoom-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.01" onChange="changeZoom('<?php echo $cod_Foto_Estudiante;?>')">
+                </div>
+                <div class="saturation-control flex-control">
+                    <label for="saturation-control">Saturación</label>
+                    <input class="input-control" type="number" name="saturation-control" id="saturation-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeSaturation('<?php echo $cod_Foto_Estudiante;?>')">
                 </div>
             </div>
         </div>

@@ -30,3 +30,33 @@ function changeVertical(id){
     console.log('Position: '+positionVertical+'; photo: '+id);
     userPhoto.style.marginTop=positionVertical+'px';
 }
+function changeZoom(id) {
+    const zoomValue = document.getElementById('zoom-control-' + id).value; // Obtén el valor del control de zoom
+    const userPhoto = document.getElementById('user-photo-' + id); // Obtén la imagen
+    console.log('Zoom: ' + zoomValue + '; photo: ' + id);
+
+    // Asegúrate de que el valor sea un número válido y dentro de un rango aceptable
+    const zoomLevel = parseFloat(zoomValue);
+    if (isNaN(zoomLevel) || zoomLevel <= 0) {
+        console.error('Valor de zoom inválido');
+        return;
+    }
+
+    // Cambiar el tamaño de la imagen usando transform: scale()
+    userPhoto.style.transform = 'scale(' + zoomLevel + ')';
+}
+function changeSaturation(id) {
+    const saturationValue = document.getElementById('saturation-control-' + id).value; // Obtén el valor del control de saturación
+    const userPhoto = document.getElementById('user-photo-' + id); // Obtén la imagen
+    console.log('Saturation: ' + saturationValue + '; photo: ' + id);
+
+    // Asegúrate de que el valor sea un número válido
+    const saturationLevel = parseFloat(saturationValue);
+    if (isNaN(saturationLevel) || saturationLevel < 0) {
+        console.error('Valor de saturación inválido');
+        return;
+    }
+
+    // Cambiar la saturación de la imagen usando filter: saturate()
+    userPhoto.style.filter = 'saturate(' + saturationLevel + ')';
+}
