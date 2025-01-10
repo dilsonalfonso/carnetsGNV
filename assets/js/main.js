@@ -45,33 +45,21 @@ function changeZoom(id) {
     // Cambiar el tamaño de la imagen usando transform: scale()
     userPhoto.style.transform = 'scale(' + zoomLevel + ')';
 }
-function changeSaturation(id) {
+function changeFilter(id) {
     const saturationValue = document.getElementById('saturation-control-' + id).value; // Obtén el valor del control de saturación
-    const userPhoto = document.getElementById('user-photo-' + id); // Obtén la imagen
-    console.log('Saturation: ' + saturationValue + '; photo: ' + id);
-
-    // Asegúrate de que el valor sea un número válido
-    const saturationLevel = parseFloat(saturationValue);
-    if (isNaN(saturationLevel) || saturationLevel < 0) {
-        console.error('Valor de saturación inválido');
-        return;
-    }
-
-    // Cambiar la saturación de la imagen usando filter: saturate()
-    userPhoto.style.filter = 'saturate(' + saturationLevel + ')';
-}
-function changeBrightness(id) {
     const brightnessValue = document.getElementById('brightness-control-' + id).value; // Obtén el valor del control de brillo
     const userPhoto = document.getElementById('user-photo-' + id); // Obtén la imagen
-    console.log('Brightness: ' + brightnessValue + '; photo: ' + id);
+    console.log('Saturation: ' + saturationValue + '; Brightness: ' + brightnessValue + '; photo: ' + id);
 
     // Asegúrate de que el valor sea un número válido
     const brightnessLevel = parseFloat(brightnessValue);
-    if (isNaN(brightnessLevel) || brightnessLevel < 0) {
-        console.error('Valor de brillo inválido');
+    const saturationLevel = parseFloat(saturationValue);
+
+    if ((isNaN(brightnessLevel) || brightnessLevel < 0) && (isNaN(saturationLevel) || saturationLevel < 0)) {
+        console.error('Valor de brillo ó saturación inválido');
         return;
     }
 
-    // Cambiar el brillo de la imagen usando filter: brightness()
-    userPhoto.style.filter = 'brightness(' + brightnessLevel + ')';
+    // Cambiar el brillo de la imagen usando filter: brightness() y saturate()
+    userPhoto.style.filter = 'brightness(' + brightnessLevel + ') saturate(' + saturationLevel + ')';
 }

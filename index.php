@@ -79,11 +79,11 @@
                 </div>
                 <div class="saturation-control flex-control">
                     <label for="saturation-control">Saturación</label>
-                    <input class="input-control" type="number" name="saturation-control" id="saturation-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeSaturation('<?php echo $cod_Foto_Estudiante;?>')">
+                    <input class="input-control" type="number" name="saturation-control" id="saturation-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeFilter('<?php echo $cod_Foto_Estudiante;?>')">
                 </div>
                 <div class="brightness-control flex-control">
                     <label for="brightness-control">Brillo</label>
-                    <input class="input-control" type="number" name="brightness-control" id="brightness-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeBrightness('<?php echo $cod_Foto_Estudiante;?>')">
+                    <input class="input-control" type="number" name="brightness-control" id="brightness-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeFilter('<?php echo $cod_Foto_Estudiante;?>')">
                 </div>
             </div>
         </div>
