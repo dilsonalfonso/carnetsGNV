@@ -1,6 +1,6 @@
 <?php 
-    $verticalPosition = 111;
-    $horizontalPosition = -84;
+    $verticalPosition = 120;
+    $horizontalPosition = -90;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@
     <script src="//cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
     <script src="assets/js/main.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/all.css">
     <style>
         .user-photo {
             margin-top: <?php echo $verticalPosition;?>px;
@@ -53,7 +54,7 @@
         <div class="carnet-group">
             <div class="carnet" id="carnet-<?php echo $cod_Foto_Estudiante;?>" onclick="Guardar(<?php echo $cod_Foto_Estudiante;?>)">
                 <div class="foto" style="background-color:cornflowerblue; margin:5px;">
-                    <img class="user-photo" id="user-photo-<?php echo $cod_Foto_Estudiante;?>" src="Fotos/JPEG/IMG_<?php echo $cod_Foto_Estudiante;?>.JPG" width="650">
+                    <img class="user-photo" id="user-photo-<?php echo $cod_Foto_Estudiante;?>" src="Fotos/JPEG/IMG_<?php echo $cod_Foto_Estudiante;?>.JPG" style="filter: brightness(1.2) saturate(0.85)" width="650">
                 </div>
                 <h3 class="nombre uppercase"><?php echo utf8_encode($nombreMostrar[0]." ".$apellidoMostrar[0]);?></h3>
                 <h3 class="nombre grado"><?php echo $estudiante[4];?></h3>
@@ -64,7 +65,8 @@
                 <input style="display:none;" id="nombre-<?php echo $cod_Foto_Estudiante;?>" value="<?php echo utf8_encode($nombre_Estudiante);?>" />
             </div>
             <div class="control">
-                <h3>Controles</h3>
+                <h3>Controles <!-- duotone style -->
+                <i class="fa-duotone fa-solid fa-user"></i></h3>
                 <div class="horizontal-control flex-control">
                     <label for="horizontal-control">Alineación Horizontal</label>
                     <input class="input-control" type="number" name="horizontal-control" id="horizontal-control-<?php echo $cod_Foto_Estudiante;?>" value="<?php echo $horizontalPosition; ?>" onChange="changeHorizontal('<?php echo $cod_Foto_Estudiante;?>')">
@@ -79,11 +81,11 @@
                 </div>
                 <div class="saturation-control flex-control">
                     <label for="saturation-control">Saturación</label>
-                    <input class="input-control" type="number" name="saturation-control" id="saturation-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeFilter('<?php echo $cod_Foto_Estudiante;?>')">
+                    <input class="input-control" type="number" name="saturation-control" id="saturation-control-<?php echo $cod_Foto_Estudiante;?>" value="0.85" step="0.05" onChange="changeFilter('<?php echo $cod_Foto_Estudiante;?>')">
                 </div>
                 <div class="brightness-control flex-control">
                     <label for="brightness-control">Brillo</label>
-                    <input class="input-control" type="number" name="brightness-control" id="brightness-control-<?php echo $cod_Foto_Estudiante;?>" value="1" step="0.05" onChange="changeFilter('<?php echo $cod_Foto_Estudiante;?>')">
+                    <input class="input-control" type="number" name="brightness-control" id="brightness-control-<?php echo $cod_Foto_Estudiante;?>" value="1.2" step="0.05" onChange="changeFilter('<?php echo $cod_Foto_Estudiante;?>')">
                 </div>
             </div>
         </div>
