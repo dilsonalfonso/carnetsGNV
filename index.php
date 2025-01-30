@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <h1>Canvas Carnetización</h1>
+        <h1>Canvas Carnetizacion</h1>
     </header><?php
     $archivo="Relación-Fotos-2024-2025.csv";
     $arreglo=file($archivo);
